@@ -1,1 +1,1 @@
-print ("type shit, type shit")
+from tkinter import *
