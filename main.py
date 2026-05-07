@@ -27,6 +27,11 @@ pady=2 ,
 )
 check_button.pack()
 
+#user input 
+user_guess = Entry()
+user_guess.config(font=("sans-serif"),)
+user_guess.pack()
+
 
 #Run the window 
 wordle_window.mainloop()
