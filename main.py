@@ -1,17 +1,18 @@
 from tkinter import *
 from tkinter import ttk
 from wonderwords import RandomWord
+import tkinter as tk
 
 
 
 #Window creation
-wordle_window = Tk() #window instantion 
-wordle_window.geometry("400x200")
+root = Tk() #window instantion 
+root.geometry("400x200")
 
 
-#wordle title
+#wordle title (Label)
 wordle_header = Label(
-wordle_window,
+root,
 text="Wordle Clone",
 font=('Satoshi',20,'bold'),
 fg='#00FF00',
@@ -20,12 +21,18 @@ fg='#00FF00',
 )
 wordle_header.pack()
 
-#user input 
-user_input = Entry()
+#string var 
+string_var = tk.StringVar()
+
+#user input(entry)
+user_input = Entry(root, textvariable=string_var, width=1)
 user_input.config(font=("sans-serif"),)
 user_input.pack()
 
+#Num_Limit_warning(Label)
 
+
+#Word_regenertion (Function)[Linked to the gnrt_button]
 def regnrt() :
     r = RandomWord()
     rword =  r.word(word_min_length=5, word_max_length=5 )
@@ -33,7 +40,7 @@ def regnrt() :
     return rword
 
 
-
+#the check button (Function)[Linked to the check_button]
 def submit() :
     user_guess = user_input.get()
     print (user_guess)
@@ -43,8 +50,7 @@ def submit() :
 
 #buttons 
 check_button = Button(
-
-wordle_window,
+root,
 text="check",
 font=('Roboto',10),
 pady=2 ,
@@ -63,7 +69,7 @@ check_button.pack()
 gnrt_button.pack()
 
 #Run the window 
-wordle_window.mainloop()
+root.mainloop()
 
 
 
