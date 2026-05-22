@@ -25,7 +25,7 @@ wordle_header.pack()
 #string var 
 string_var = tk.StringVar()
 
-#frames
+#frames (user_input)
 frame_1 = tk.Frame(root)
 frame_1.pack()
 
@@ -52,7 +52,9 @@ user_input_3.pack(side="left", padx=10, pady=10, ipadx=2)
 user_input_4.pack(side="left", padx=10, pady=10, ipadx=2)
 user_input_5.pack(side="left", padx=10, pady=10, ipadx=2)
 
+
 #Num_Limit_warning(Label)
+
 
 
 #Word_regenertion (Function)[Linked to the gnrt_button]
@@ -63,17 +65,21 @@ def regnrt() :
     return rword
 
 
+
+
 #the check button (Function)[Linked to the check_button]
 def submit() :
     user_guess = user_input.get()
     print (user_guess)
     return user_guess
 
-
+#frames (check & gnrt btn)
+frame_2 = tk.Frame(root)
+frame_2.pack()
 
 #buttons 
 check_button = Button(
-root,
+frame_2,
 text="check",
 font=('Roboto',10),
 pady=2 ,
@@ -82,14 +88,15 @@ command = submit, # a function call back goes in here
 
 
 gnrt_button = Button(
+    frame_2, 
     text="regenerate",
     font=('Roboto',10),
     pady=2 ,
     command = regnrt, 
 )
 
-check_button.pack()
-gnrt_button.pack()
+check_button.pack(side= "left")
+gnrt_button.pack(side= "left")
 
 #Run the window 
 root.mainloop()
