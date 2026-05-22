@@ -10,6 +10,7 @@ root = Tk() #window instantion
 root.geometry("400x200")
 
 
+
 #wordle title (Label)
 wordle_header = Label(
 root,
@@ -24,10 +25,32 @@ wordle_header.pack()
 #string var 
 string_var = tk.StringVar()
 
+#frames
+frame_1 = tk.Frame(root)
+frame_1.pack()
+
 #user input(entry)
-user_input = Entry(root, textvariable=string_var, width=1)
-user_input.config(font=("sans-serif"),)
-user_input.pack()
+user_input_1 = Entry(frame_1, textvariable=string_var, width=1)
+user_input_1.config(font=("sans-serif"),)
+
+user_input_2 = Entry(frame_1, textvariable=string_var, width=1)
+user_input_2.config(font=("sans-serif"),)
+
+user_input_3 = Entry(frame_1, textvariable=string_var, width=1)
+user_input_3.config(font=("sans-serif"),)
+
+user_input_4 = Entry(frame_1, textvariable=string_var, width=1)
+user_input_4.config(font=("sans-serif"),)
+
+user_input_5 = Entry(frame_1, textvariable=string_var, width=1)
+user_input_5.config(font=("sans-serif"),)
+
+
+user_input_1.pack(side="left", padx=10, pady=10, ipadx=2)
+user_input_2.pack(side="left", padx=10, pady=10, ipadx=2)
+user_input_3.pack(side="left", padx=10, pady=10, ipadx=2)
+user_input_4.pack(side="left", padx=10, pady=10, ipadx=2)
+user_input_5.pack(side="left", padx=10, pady=10, ipadx=2)
 
 #Num_Limit_warning(Label)
 
